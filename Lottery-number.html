@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Lottery generator</title>
+
+		<!-- Added link to the jQuery Library -->
+	  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	  <!-- Added a link to Bootstrap-->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	</head>
+
+	<body>
+		<div class="jumbotron">
+			<h1 class="text-center">Lottery generator!</h1>
+
+			<div class="text-center">
+				<button id="random-number" class="btn btn-primary btn-lg" <h1> <span class="glyphicon glyphicon-question-sign"></span></h1></button>
+			</div>
+
+		</div>
+
+		<h1 class="text-centre" id="random-number"></h1>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$("#random-number").on("click",function(){
+					var lotteryNumber="";
+					for(var i=0; i < 9; i++){
+						var randomNumber = Math.floor(Math.random()*9) +1;
+						lotteryNumber =lotteryNumber + randomNumber;
+					}
+
+					$("#random-number").prepend("<br><hr>" + lotteryNumber);
+				})
+			});
+		</script>
+
+	</body>
+</html>
